@@ -4,8 +4,70 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/number1linear">
+    <TextView
+        android:text="1st Number"
+        android:id="@+id/number1text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_weight="1"/>
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/number1"
+        android:layout_toRightOf="@id/number1text"
+        android:layout_weight="2"/>
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/number2linear"
+        android:layout_below="@+id/number1linear">
+    <TextView
+        android:text="2nd Number"
+        android:id="@+id/number2text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/number1text"
+        android:layout_weight="1"
+        android:padding="10dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/number2"
+        android:layout_weight="2"
+        android:layout_below="@id/number1"
+        android:layout_toRightOf="@id/number2text"/>
+
+    </LinearLayout>
+    <Button
+        android:text="Add"
+        android:layout_below="@id/number2linear"
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="Total"
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/add"
+        android:padding="10dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/totalvalue"
+        android:layout_below="@id/add"
+        android:layout_toRightOf="@id/total"/>
 
 </RelativeLayout>

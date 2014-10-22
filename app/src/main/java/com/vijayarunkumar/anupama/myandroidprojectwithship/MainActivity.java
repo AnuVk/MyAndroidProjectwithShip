@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 
 public class MainActivity extends Activity {
@@ -12,6 +15,21 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        final Button addButton = (Button) findViewById(R.id.add);
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText number1_editText = (EditText)findViewById(R.id.number1);
+                EditText number2_editText= (EditText)findViewById(R.id.number2);
+                EditText total = (EditText)findViewById(R.id.totalvalue);
+                int number1 = Integer.valueOf(number1_editText.getText().toString());
+                int number2 = Integer.valueOf(number2_editText.getText().toString());
+                int sum = number1 + number2;
+                String totalvalue = String.valueOf(sum);
+                total.setText(totalvalue);
+
+            }
+        });
     }
 
 
@@ -36,4 +54,8 @@ public class MainActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
+
 }
